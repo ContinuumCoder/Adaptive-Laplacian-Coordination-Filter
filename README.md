@@ -6,19 +6,25 @@ ALCF treats a joint multi-agent load vector as a graph signal. It learns an inte
 
 ## Method
 
-For a load vector \(z \in \mathbb{R}^n\), ALCF uses the decomposition
+For a load vector $z \in \mathbb{R}^n$, ALCF uses the decomposition
 
-\[
-z = \bar z \mathbf{1} + r, \qquad \mathbf{1}^\top r = 0.
-\]
+$$
+z = \bar{z}\mathbf{1} + r, \qquad \mathbf{1}^{\top}r = 0.
+$$
 
 The safety set is
 
-\[
-\mathcal{S}(\beta,\gamma)=\{z: |\mathbf{1}^\top z| \le \beta,\; z^\top Qz \le \gamma\},
-\]
+$$
+\mathcal{S}(\beta,\gamma)
+=
+\left\{
+z:
+\left|\mathbf{1}^{\top}z\right| \le \beta,\;
+z^{\top}Qz \le \gamma
+\right\}.
+$$
 
-where \(Q=p(L)\) is a polynomial spectral graph filter derived from the learned graph Laplacian \(L\). The projection separates into a scalar clipping step for the collective component and a Laplacian low-pass filtering step for the mean-zero disagreement component.
+where $Q=p(L)$ is a polynomial spectral graph filter derived from the learned graph Laplacian $L$. The projection separates into a scalar clipping step for the collective component and a Laplacian low-pass filtering step for the mean-zero disagreement component.
 
 ## Repository Layout
 
